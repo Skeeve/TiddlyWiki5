@@ -36,6 +36,28 @@ The example renders as:
 | Centred content |
 |+++ a very wide column so we can see the alignment +++|
 
+! Cell vertical Alignment
+
+Vertical alignment of cells is done by inserting either a `^` for top alignment or a `,` for bottom alignment as the first character of a cell, followed by a space or as the last character of a cell, preceeded by a space. The normal horizontal alignment is still possible.
+
+A shortned example:
+
+```
+|top left ^|^ top center |^ top right|
+|middle left | middle center | middle right|
+|bottom left ,| bottom center ,|, bottom right|
+```
+
+The example renders as:
+
+| :: | ::::::::::::::::::::::::::: | ::::::::::::::::::::::::::: | ::::::::::::::::::::::::::: | :: |
+| ::<br>:: |top left ^|^ top center |^ top right| ::<br>:: |
+| ::<br>:: |middle left | middle center | middle right| ::<br>:: |
+| ::<br>:: |bottom left ,| bottom center ,|, bottom right| ::<br>:: |
+| :: | ::::::::::::::::::::::::::: | ::::::::::::::::::::::::::: | ::::::::::::::::::::::::::: | :: |
+
+The reason for the constraint of having to have a space immediately after or before the `^` and `,` is the fact that this will allow us to have these characters still as the first and last character in a cell.
+
 ! Cell Merging
 
 To merge a table cell with the one above, use the special cell text `~`. To merge a cell with the one to its left use the text `<`. To merge one to its right use `>`. For example:
