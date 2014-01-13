@@ -75,6 +75,7 @@ NewtiddlerWidget.prototype.handleClickEvent = function(event) {
 	}
 	this.wiki.addTiddler(skeletonClone);
 	switch(this.newtiddlerEdit) {
+	case "show":
 	case "yes":
 		var bounds = this.domNodes[0].getBoundingClientRect();
 		this.dispatchEvent({
@@ -85,7 +86,9 @@ NewtiddlerWidget.prototype.handleClickEvent = function(event) {
 			navigateFromClientRect: { top: bounds.top, left: bounds.left, width: bounds.width, right: bounds.right, bottom: bounds.bottom, height: bounds.height
 			}
 		});
-		this.dispatchEvent({type: "tw-edit-tiddler", tiddlerTitle: title});
+		if(this.newtiddlerEdit === "yes") {
+			this.dispatchEvent({type: "tw-edit-tiddler", tiddlerTitle: title});
+		}
 		break;
 	case "no":
 		break;
