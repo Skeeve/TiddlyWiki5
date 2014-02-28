@@ -1,0 +1,51 @@
+created: 20140227194654308
+creator: dev
+modified: 20140228134820152
+modifier: dev
+my_color: #8bbec7
+title: ListselectWidget
+type: text/vnd.tiddlywiki
+
+\define colorbox()
+<div style="display:inline-block; width:16px; height:16px; background-color:$(color)$"/>
+\end
+
+The [[ListselecWidget|$:/plugins/skeeve/listselect.js]] widgets creates an HTML ``<select>`` element, which allows to set a field value.
+
+To be most flexible, the list of options is created using [[TiddlerFilters]]. This allows you to create options:
+
+* based on existing tiddlers and their fields
+* from fixed strings
+
+Option labels and values need not be identical, as you can see in the first example below. It searches for all tiddlers having a "color" field. The label of the option is the title of the tiddler, the value is taken from the tiddler's color field:
+
+```
+<$listselect
+  filter="[!field:color[]!has[draft.of]sort[title]]"
+  value="color"
+  tiddler="$:/temp/search"
+  field="my_color"/>
+```
+Select a tag's color <$listselect filter="[!field:color[]!has[draft.of]sort[title]]" value="color" tiddler="$:/temp/search" field="my_color"/> <$set name="color" value={{$:/temp/search!!my_color}}><<colorbox>></$set>
+
+In that example, the option's value was taken from a field. But it is also possible to take the option's label from a field by setting ``label="fieldname"``.
+
+The next example shows how to create a list of options based on fixed strings:
+
+```
+<$listselect filter="[[Apple:218 kj]] [[Apricot:201 kj]] …
+  labelvalue=":">
+```
+The attribute ``labelvalue=":"`` defines the ``:`` to seperate labels from values. If you happen to have labels and values the other way around, use ``valuelabel=":"``. You can use any character in place of the ``;``.
+
+<$listselect filter="[[Apple:218 kj]] [[Apricot:201 kj]] [[Avocado:670 kj]] [[Banana:393 kj]] [[Boysenberries:312 kj]] [[Blueberries:339 kj]] [[Dates:2047 kj]] [[Grapefruit:343 kj]] [[Grapes:475 kj]] [[Kiwi fruit:194 kj]] [[Lemon:70 kj]] [[Melon:101 kj]] [[Nectarine:279 kj]] [[Oranges:361 kj]] [[Peaches:176 kj]] [[Pear:410 kj]] [[Pineapple:318 kj]] [[Plums:152 kj]] [[Raspberries:252 kj]] [[Strawberries:190 kj]] [[Watermelon:383 kj]]" labelvalue=":" field="my_calories" tiddler="$:/temp/search"/> <$view field="my_calories" tiddler="$:/temp/search"/>
+
+|Parameter |Description |h
+|tiddler |Name of the tiddler in which the field should be set. Defaults to current tiddler |
+|field |The name of the field to be set |
+|filter |A filter expression which should give the list of possible values |
+|label |The name of a field in the currentTiddler which holds the label of the option. Default "title" |
+|value |The name of a field in the currentTiddler which holds the value of the option. Default "title" |
+|labelvalue |defines the character (or string) which seperates label and value |
+|valuelabel |defines the character (or string) which seperates value and label |
+|class |Optional class name(s) |

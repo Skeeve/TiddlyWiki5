@@ -3,7 +3,8 @@
 		"tiddlywiki/fullscreen",
 		"tiddlywiki/googleanalytics",
 		"tiddlywiki/nodewebkitsaver",
-		"tiddlywiki/github-fork-ribbon"
+		"tiddlywiki/github-fork-ribbon",
+		"skeeve/listselect"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",
