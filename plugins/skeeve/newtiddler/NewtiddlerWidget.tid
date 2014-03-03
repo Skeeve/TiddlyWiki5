@@ -1,9 +1,8 @@
 created: 20131219134809679
 creator: Stephan Hradek
 modified: 20140303191836454
-modifier: dev
-modules-used: [[$:/plugins/skeeve/newtiddler.js]] [[$:/macros/skeeve/uuid.js]] [[$:/plugins/skeeve/let.js]]
-tags: widget explanation
+modifier: Stephan Hradek
+tags: $:/HELP
 title: NewtiddlerWidget
 type: text/vnd.tiddlywiki
 

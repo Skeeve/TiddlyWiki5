@@ -3,7 +3,7 @@ creator: Stephan Hradek
 field1: $(f1)$
 field2: $(f2)$
 modified: 20140303191730416
-modifier: dev
+modifier: Stephan Hradek
 tags: $(tag1)$
 title: $:/plugins/skeeve/newtiddler/SkeletonExample
 type: text/vnd.tiddlywiki
