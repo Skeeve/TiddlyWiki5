@@ -1,0 +1,48 @@
+created: 20131219134809679
+creator: Stephan Hradek
+modified: 20140303191836454
+modifier: dev
+modules-used: [[$:/plugins/skeeve/newtiddler.js]] [[$:/macros/skeeve/uuid.js]] [[$:/plugins/skeeve/let.js]]
+tags: widget explanation
+title: NewtiddlerWidget
+type: text/vnd.tiddlywiki
+
+This is a test for the highly experimental New-Tiddler-Button which allows to pre fill a skeleton tiddler with variable data.
+
+The New-Tiddler-Button expects 2 parameters:
+
+|Parameter |Mandatory |Explanation |h
+|title |yes |the title of the new tiddler. Will get numbers appended |
+|skeleton |yes |an existing tiddler which may contain variable placeholders |
+|edit |no |This defines wether to open the new tiddler in edit mode. Must be one of "yes", "no", "show" or (not implemented yet) "inline". Defaults to "yes". |
+
+The most important part lies in the skeleton! TiddlyWiki already can clone tiddlers, but you can't really prefill data of the newly created tiddler.
+
+With `<$newtiddler>` you can put placeholders of the form `$(variable)$` ''anywhere'' in the tiddler and they will be replaced by the values of the variables set with the `<$set>` or `<$let>` widget. Please note: The placeholders can be ''anywhere''! In the tiddlers body, in fields, types, you name it…
+
+The example skeleton used here looks like this:
+
+|Property |Content |h
+|title |skeleton 1 |
+|text |This is some test: $(placeholder)$ |
+|tags |$(tag1}$ |
+|field1 |$(f1)$ |
+|field2 |$(f2)$ |
+
+If we now put this into our tiddler:
+
+```
+<$set name="f1" value=<<qualify "unique">> >
+<$set name="f2" value="field-2">
+<$set name="placeholder" value="pl1">
+<$set name="tag1" value="testtag">
+<$newtiddler title="test" skeleton="$:/plugins/skeeve/newtiddler/SkeletonExample">Create</$newtiddler>
+</$set>
+</$set>
+</$set>
+</$set>
+```
+
+We get a <$set name="f1" value=<<qualify "unique">> ><$set name="f2" value="field-2"><$set name="placeholder" value="pl1"><$set name="tag1" value="testtag"><$newtiddler title="test" skeleton="$:/plugins/skeeve/newtiddler/SkeletonExample">Create</$newtiddler></$set></$set></$set></$set> button.
+
+Clicking it, will open a new tiddler with some values pre-filled.
