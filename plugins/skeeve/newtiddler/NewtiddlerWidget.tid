@@ -3,7 +3,7 @@ creator: Stephan Hradek
 modified: 20140303191836454
 modifier: Stephan Hradek
 tags: $:/HELP
-title: NewtiddlerWidget
+title: $:/help/skeeve/NewtiddlerWidget
 type: text/vnd.tiddlywiki
 
 This is a test for the highly experimental New-Tiddler-Button which allows to pre fill a skeleton tiddler with variable data.
