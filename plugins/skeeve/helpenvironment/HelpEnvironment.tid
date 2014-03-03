@@ -1,0 +1,11 @@
+created: 20140303210045118
+creator: Stephan Hradek
+modified: 20140303210723280
+modifier: Stephan Hradek
+tags: $:/HELP
+title: $:/help/skeeve/HelpEnvironment
+type: text/vnd.tiddlywiki
+
+The help environment is simply a new tab for the [[AdvancedSearch|$:/AdvancedSearch]] function.
+
+The help search simply searches for Shadow Tiddlers tagged with ''$:/HELP''. For your own plugins to utilize this, I recommend to package help tiddlers as shadow tiddlers in the path ``$:/help/<yourname>/<helptopic>``.
