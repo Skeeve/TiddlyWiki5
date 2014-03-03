@@ -4,6 +4,7 @@
 		"tiddlywiki/googleanalytics",
 		"tiddlywiki/nodewebkitsaver",
 		"tiddlywiki/github-fork-ribbon",
+		"skeeve/helpenvironment",
 		"skeeve/listselect",
 		"skeeve/newtiddler"
 	],
