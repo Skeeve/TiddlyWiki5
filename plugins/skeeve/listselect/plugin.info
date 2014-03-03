@@ -1,6 +1,6 @@
 {
 	"title":       "$:/plugins/skeeve/listselect",
-	"description": "list select widget",
+	"description": "listselect widget",
 	"author":      "Stephan Hradek",
 	"coreVersion": ">=5.0.0",
 	"version":     "0.1"

@@ -1,6 +1,6 @@
 {
 	"title":       "$:/plugins/skeeve/newtiddler",
-	"description": "bew tiddler widget",
+	"description": "newtiddler widget",
 	"author":      "Stephan Hradek",
 	"coreVersion": ">=5.0.0",
 	"version":     "0.2"
