@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 \define lingo-base() $:/language/Search/
 <$linkcatcher to="$:/temp/advancedsearch">
 
-<<lingo Shadows/Hint>>
+<<lingo Help/Hint>>
 
 <div class="tw-search"><$edit-text tiddler="$:/temp/advancedsearch" type="search" tag="input"/><$reveal state="$:/temp/advancedsearch" type="nomatch" text=""> <$link to="" class="btn-invisible">{{$:/core/images/close-button}}</$link></$reveal></div>
 
